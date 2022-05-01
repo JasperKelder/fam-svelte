@@ -2,7 +2,12 @@
 	<title>Blog - Fundament All Media</title>
 </svelte:head>
 
-<section />
+<section>
+	<div class="hero">
+		<h1>Fam thoughts</h1>
+		<h2>Onze schrijfsels</h2>
+	</div>
+</section>
 
 <style>
 	section {

@@ -2,7 +2,12 @@
 	<title>Onze Service - Fundament All Media</title>
 </svelte:head>
 
-<section />
+<section>
+	<div class="hero">
+		<h1>Onze Service</h1>
+		<h2>Top Service</h2>
+	</div>
+</section>
 
 <style>
 	section {

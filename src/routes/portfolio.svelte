@@ -2,7 +2,12 @@
 	<title>Portfolio - Fundament All Media</title>
 </svelte:head>
 
-<section />
+<section>
+	<div class="hero">
+		<h1>Portfolio</h1>
+		<h2>Geen doelstelling te gek voor ons team.</h2>
+	</div>
+</section>
 
 <style>
 	section {

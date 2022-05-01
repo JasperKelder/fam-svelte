@@ -2,7 +2,12 @@
 	<title>Vacatures - Fundament All Media</title>
 </svelte:head>
 
-<section />
+<section>
+	<div class="hero">
+		<h1>Vacatures</h1>
+		<h2>Kom jij bij onze FAMilie?</h2>
+	</div>
+</section>
 
 <style>
 	section {

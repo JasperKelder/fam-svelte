@@ -1,10 +1,11 @@
 <script>
+	import { page } from '$app/stores';
 	import { navbarStyling } from '$lib/store.js';
 </script>
 
 <header class:headerChange={$navbarStyling}>
 	<div>
-		<a href="/" on:click={navbarStyling.reset}>
+		<a href="/" class:active={$page.url.pathname === '/'} on:click={navbarStyling.reset}>
 			<img
 				width="208.659"
 				height="15.297"
@@ -18,30 +19,58 @@
 	<nav>
 		<ul>
 			<li>
-				<a href="/service" class:textChange={$navbarStyling} on:click={navbarStyling.reset}
-					>Onze Service</a
+				<div class="dropdown">
+					<a
+						href="/service"
+						class:active={$page.url.pathname === '/service'}
+						class:textChange={$navbarStyling}
+						on:click={navbarStyling.reset}>Onze Service</a
+					>
+					<div class="dropdown-content">
+						<a href="#">Link 1</a>
+						<a href="#">Link 2</a>
+						<a href="#">Link 3</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<a
+					href="/portfolio"
+					class:active={$page.url.pathname === '/portfolio'}
+					class:textChange={$navbarStyling}
+					on:click={navbarStyling.reset}>Portfolio</a
 				>
 			</li>
 			<li>
-				<a href="/portfolio" class:textChange={$navbarStyling} on:click={navbarStyling.reset}
-					>Portfolio</a
+				<a
+					href="/team"
+					class:active={$page.url.pathname === '/team'}
+					class:textChange={$navbarStyling}
+					on:click={navbarStyling.reset}>Ons Team</a
 				>
 			</li>
 			<li>
-				<a href="/team" class:textChange={$navbarStyling} on:click={navbarStyling.reset}>Ons Team</a
+				<a
+					href="/blog"
+					class:active={$page.url.pathname === '/blog'}
+					class:textChange={$navbarStyling}
+					on:click={navbarStyling.reset}>Blog</a
 				>
 			</li>
 			<li>
-				<a href="/blog" class:textChange={$navbarStyling} on:click={navbarStyling.reset}>Blog</a>
-			</li>
-			<li>
-				<a href="/vacatures" class:textChange={$navbarStyling} on:click={navbarStyling.reset}
-					>Vacatures</a
+				<a
+					href="/vacatures"
+					class:active={$page.url.pathname === '/vacatures'}
+					class:textChange={$navbarStyling}
+					on:click={navbarStyling.reset}>Vacatures</a
 				>
 			</li>
 			<li>
-				<a href="/contact" class:textChange={$navbarStyling} on:click={navbarStyling.reset}
-					>Contact</a
+				<a
+					href="/contact"
+					class:active={$page.url.pathname === '/contact'}
+					class:textChange={$navbarStyling}
+					on:click={navbarStyling.reset}>Contact</a
 				>
 			</li>
 		</ul>
@@ -94,5 +123,77 @@
 
 	.imgChange {
 		content: url('/logo-fundament-all-media.png');
+	}
+
+	.active {
+		font-weight: 700;
+	}
+
+	nav a {
+		display: block;
+		position: relative;
+		padding: 8px 0;
+	}
+
+	nav a::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: white;
+		opacity: 0;
+		transition: opacity 300ms, transform 300ms;
+	}
+
+	nav a:hover::after,
+	nav a:focus::after {
+		opacity: 1;
+		transform: translate3d(0, 2px, 0);
+	}
+
+	nav li a::after {
+		opacity: 1;
+		transform: scale(0);
+		transform-origin: center;
+	}
+
+	nav li a:hover::after,
+	nav li a:focus::after {
+		transform: scale(1);
+	}
+
+	.dropdown {
+		position: relative;
+		display: inline-block;
+	}
+
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #f9f9f9;
+		min-width: 97px;
+		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+		z-index: 1;
+		transition: 1.4s all;
+		border-radius: 20px;
+		padding: 10px 0;
+	}
+
+	.dropdown-content a {
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+	}
+
+	.dropdown-content a:hover {
+		background-color: #f1f1f1;
+		border-radius: 20px;
+	}
+
+	.dropdown:hover .dropdown-content {
+		display: block;
 	}
 </style>

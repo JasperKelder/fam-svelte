@@ -2,7 +2,12 @@
 	<title>Ons Team - Fundament All Media</title>
 </svelte:head>
 
-<section />
+<section>
+	<div class="hero">
+		<h1>Ons Team</h1>
+		<h2>Samen maken wij de verbinding.</h2>
+	</div>
+</section>
 
 <style>
 	section {

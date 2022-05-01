@@ -4,6 +4,9 @@
 
 <section>
 	<div class="cover" />
+	<div class="hero">
+		<h1>Contact</h1>
+	</div>
 </section>
 
 <style>
