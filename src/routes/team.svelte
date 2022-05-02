@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <svelte:head>
 	<title>Ons Team - Fundament All Media</title>
 </svelte:head>

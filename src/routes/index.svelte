@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <script>
 	import IntersectionObserver from 'svelte-intersection-observer';
 	import { navbarStyling } from '$lib/store.js';
