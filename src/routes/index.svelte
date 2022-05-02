@@ -29,10 +29,14 @@
 
 <section>
 	<div class="content">
-		<h1>
+		<h2>
 			<span>Leveren in</span>
 			<span>Style</span>
-		</h1>
+		</h2>
+		<div class="flex">
+			<img src="/bakfiets.png" alt="Klanten" />
+		</div>
+		<a class="button" href="/service" on:click={navbarStyling.reset}>Kijk voor wie we werken</a>
 	</div>
 </section>
 
@@ -43,12 +47,57 @@
 				{navbarStyling.change()}
 			{/if}
 		</div>
+		<div class="content">
+			<h2>
+				<span>Een goed</span>
+				<span>Concept</span>
+			</h2>
+			<div class="flex">
+				<img src="/light.png" alt="Concept" />
+			</div>
+			<a class="button" href="/service" on:click={navbarStyling.reset}>Meer over concepting</a>
+		</div>
 	</section>
 </IntersectionObserver>
 
-<section />
-<section />
-<section />
+<section>
+	<div class="content">
+		<h2>
+			<span>Maak een mooi</span>
+			<span>Design</span>
+		</h2>
+		<div class="flex">
+			<img src="/veer.png" alt="Design" />
+		</div>
+		<a class="button" href="/service" on:click={navbarStyling.reset}>Meer over Design</a>
+	</div>
+</section>
+
+<section>
+	<div class="content">
+		<h2>
+			<span>Verbind de juiste</span>
+			<span>Techniek</span>
+		</h2>
+		<div class="flex">
+			<img src="/propellor.png" alt="Techniek" />
+		</div>
+		<a class="button" href="/service" on:click={navbarStyling.reset}>Meer over techniek</a>
+	</div>
+</section>
+
+<section>
+	<div class="content">
+		<h2>
+			<span>Maak het</span>
+			<span>Persoonlijk</span>
+		</h2>
+		<div class="flex">
+			<img src="/koffie.png" alt="Contact" />
+		</div>
+		<a class="button" href="/contact" on:click={navbarStyling.reset}>Neem contact met ons op</a>
+	</div>
+</section>
 
 <style>
 	section {
@@ -93,7 +142,8 @@
 		top: 22%;
 	}
 
-	.content > h1 > span {
+	.content > h1 > span,
+	.content > h2 > span {
 		display: flex;
 		justify-content: center;
 		color: white;
@@ -104,6 +154,13 @@
 		font-size: 88px;
 		line-height: 100px;
 		font-weight: 400;
+	}
+
+	.content > h2 > span:nth-child(2) {
+		font-family: 'Pacifico';
+		font-size: 88px;
+		font-weight: 400;
+		color: black;
 	}
 
 	.content p {
@@ -131,5 +188,10 @@
 
 	.intersection {
 		display: none;
+	}
+
+	.flex {
+		display: flex;
+		justify-content: center;
 	}
 </style>

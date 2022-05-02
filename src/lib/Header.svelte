@@ -19,19 +19,12 @@
 	<nav>
 		<ul>
 			<li>
-				<div class="dropdown">
-					<a
-						href="/service"
-						class:active={$page.url.pathname === '/service'}
-						class:textChange={$navbarStyling}
-						on:click={navbarStyling.reset}>Onze Service</a
-					>
-					<div class="dropdown-content">
-						<a href="#">Link 1</a>
-						<a href="#">Link 2</a>
-						<a href="#">Link 3</a>
-					</div>
-				</div>
+				<a
+					href="/service"
+					class:active={$page.url.pathname === '/service'}
+					class:textChange={$navbarStyling}
+					on:click={navbarStyling.reset}>Onze Service</a
+				>
 			</li>
 			<li>
 				<a
@@ -162,38 +155,5 @@
 	nav li a:hover::after,
 	nav li a:focus::after {
 		transform: scale(1);
-	}
-
-	.dropdown {
-		position: relative;
-		display: inline-block;
-	}
-
-	.dropdown-content {
-		display: none;
-		position: absolute;
-		background-color: #f9f9f9;
-		min-width: 97px;
-		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-		z-index: 1;
-		transition: 1.4s all;
-		border-radius: 20px;
-		padding: 10px 0;
-	}
-
-	.dropdown-content a {
-		color: black;
-		padding: 12px 16px;
-		text-decoration: none;
-		display: block;
-	}
-
-	.dropdown-content a:hover {
-		background-color: #f1f1f1;
-		border-radius: 20px;
-	}
-
-	.dropdown:hover .dropdown-content {
-		display: block;
 	}
 </style>
